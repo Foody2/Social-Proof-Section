@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+
+:root {
+  /*Primary*/
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+
+  /*Neutral*/
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Spartan", sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  color: var(--very-dark-magenta);
+  font-weight: 700;
+  line-height: 1em;
+}
+
+h4 {
+  color: var(--very-dark-magenta);
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+p {
+  font-weight: 500;
+  font-size: 0.9em;
+  color: var(--dark-grayish-magenta);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient
+    (45deg, rgba(var(--very-dark-magenta), 1), rgba(var(--soft-pink), 1));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 73%;
+  height: 75%;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  position: relative;
+}
+
+.card::before {
+  content: " ";
+  background-image: url(images/bg-pattern-top-desktop.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.card::after {
+  content: " ";
+  background-image: url(images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 80%;
+  width: 75%;
+}
+
+.upper-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 50%;
+  padding: 4% 10% 0 10%;
+}
+
+.text-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+}
+
+.text-left p {
+  padding-top: 3%;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  width: 95%;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 70%;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  background: var(--light-grayish-magenta);
+  padding: 15px 0px 15px 20px;
+  border-radius: 10px;
+  width: 60%;
+}
+
+.rating h4 {
+  padding-left: 5%;
+}
+
+.first-rating {
+  display: flex;
+  align-self: flex-start;
+}
+.second-rating {
+  display: flex;
+  align-self: center;
+}
+.third-rating {
+  display: flex;
+  align-self: flex-end;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: row;
+  height: 35%;
+  justify-content: space-between;
+  padding: 0% 10%;
+}
+
+.test {
+  background: var(--very-dark-magenta);
+  border-radius: 10px;
+  padding: 3% 3%;
+  width: 32%;
+}
+
+.testimonials p {
+  color: white;
+  line-height: 1.5em;
+  font-weight: 400;
+  font-size: 0.8em;
+  padding-top: 25px;
+}
+
+.test-name h4 {
+  color: white;
+  font-size: 0.8em;
+  font-weight: 700;
+  padding-left: 0%;
+}
+
+.test-name h5 {
+  color: var(--soft-pink);
+  font-size: 0.8em;
+  font-weight: 400;
+  padding-top: 5px;
+}
+
+.test-name {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-left: 5%;
+}
+
+.test-heading {
+  display: flex;
+  flex-direction: row;
+}
+
+.test-img img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.test-first {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+}
+
+.test-second {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}
+
+.test-third {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1200px) {
+  h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .card {
+    height: auto;
+    width: 100%;
+  }
+  .card::before {
+    background-image: url(images/bg-pattern-top-mobile.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .upper-part {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 50px;
+  }
+  .text-left {
+    width: 100%;
+    padding-top: 100px;
+    height: auto;
+  }
+
+  .text-left p {
+    text-align: center;
+    font-size: 0.7em;
+    padding: 20px 0;
+  }
+  .ratings {
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 40px;
+  }
+
+  .rating {
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .test {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .testimonials p {
+    font-size: 0.7em;
+    padding: 25px 0;
+  }
+}
